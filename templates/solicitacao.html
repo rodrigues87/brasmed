@@ -84,7 +84,16 @@
 
                             <div class="row">
                                 <div class="col-6 col-sm-6">
-                                    {{ form.comprovante|as_crispy_field }}
+                                    {{ form.proposta_frente|as_crispy_field }}
+                                </div>
+                                                                <div class="col-6 col-sm-6">
+                                    {{ form.proposta_verso|as_crispy_field }}
+                                </div>
+                                                                <div class="col-6 col-sm-6">
+                                    {{ form.foto_identidade|as_crispy_field }}
+                                </div>
+                                                                <div class="col-6 col-sm-6">
+                                    {{ form.foto_cpf|as_crispy_field }}
                                 </div>
                             </div>
 
