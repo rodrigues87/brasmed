@@ -1,3 +1,4 @@
+from creditcards.models import CardExpiryField
 from django.db import models
 from django.core.validators import RegexValidator
 
@@ -19,8 +20,10 @@ class Solicitacao(models.Model):
 
     modalidade_de_pagamento = models.CharField(max_length=1, choices=MODALIDADE_CHOICES, blank=False, null=False)
     numero_do_cartao = models.CharField(max_length=16, validators=[alphanumeric])
-    nome_no_cartao =  models.CharField(max_length=30)
-    validade = models.DateField()
+    nome_no_cartao = models.CharField(max_length=30)
+
+    #https://pypi.org/project/django-credit-cards/
+    validade = CardExpiryField('Data de expiração')
     codigo_de_seguranca = models.CharField(max_length=3, validators=[alphanumeric])
     comprovante = models.FileField(blank=True, null=True)
     executada = models.BooleanField(default=False,null=False)
