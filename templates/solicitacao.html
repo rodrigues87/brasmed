@@ -13,6 +13,13 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="{% static "/../media/css/background.css" %}" rel="stylesheet" media="all">
 
+<script>
+$(document).ready(function(){
+    localStorage.clear();
+});
+</script>
+
+
     <title>BRASMED</title>
 </head>
 <body>
@@ -94,6 +101,15 @@
                                     {{ form.foto_cpf|as_crispy_field }}
                                 </div>
                             </div>
+                            {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-success" role="alert">
+                                        {% if message.tags %}
+                                            {{ message }}
+                                        {% endif %}
+                                        </div>
+                                    {% endfor %}
+                            {% endif %}
 
                             <input type="submit" class="btn btn-success btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Enviar
