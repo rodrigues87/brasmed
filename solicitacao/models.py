@@ -31,6 +31,7 @@ class Solicitacao(models.Model):
     foto_cpf = models.FileField(blank=True, null=True,upload_to='uploads/cpf')
     executada = models.BooleanField(default=False,null=False)
 
+
     def __str__(self):
         return self.nome_completo
 
