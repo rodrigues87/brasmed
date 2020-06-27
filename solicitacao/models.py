@@ -25,10 +25,10 @@ class Solicitacao(models.Model):
     #https://pypi.org/project/django-credit-cards/
     validade = CardExpiryField('Data de expiração')
     codigo_de_seguranca = models.CharField(max_length=3, validators=[alphanumeric])
-    proposta_frente = models.FileField(blank=True, null=True)
-    proposta_verso = models.FileField(blank=True, null=True)
-    foto_identidade = models.FileField(blank=True, null=True)
-    foto_cpf = models.FileField(blank=True, null=True)
+    proposta_frente = models.FileField(blank=True, null=True,upload_to='uploads/proposta')
+    proposta_verso = models.FileField(blank=True, null=True,upload_to='uploads/proposta')
+    foto_identidade = models.FileField(blank=True, null=True,upload_to='uploads/identidade')
+    foto_cpf = models.FileField(blank=True, null=True,upload_to='uploads/cpf')
     executada = models.BooleanField(default=False,null=False)
 
     def __str__(self):
