@@ -12,6 +12,6 @@ def solicitacao(request):
             solicitacao.vendedor = request.user
             solicitacao.save()
 
-            #return render(request, 'site/pedidos/agradecimentos.html', {'solicitacao': solicitatao})
+            return redirect('/')
         return render(request, 'solicitacao.html', {'form': form})
     return redirect('login/')
